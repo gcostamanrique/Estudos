@@ -1,9 +1,8 @@
 function component() {
-    const element = document.createElement('div');
-
-    element.innerHTML = "<h1>Olá hahaha</h1>";
-
-    return element;
+    const element = document.getElementById("content");    
+    if (element) {
+        element.innerHTML += "<h1></h1>";
+    }
 }
 
-document.body.appendChild(component());
+component();

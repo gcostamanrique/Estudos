@@ -10,6 +10,7 @@ const config: webpack.Configuration = {
   entry: {
     index: "./src/index.ts"
   },
+  devtool: "inline-source-map",
   module: {
     rules: [
       {
