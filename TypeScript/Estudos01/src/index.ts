@@ -1,8 +1,23 @@
-function component() {
-    const element = document.getElementById("content");    
-    if (element) {
-        element.innerHTML += "<h1></h1>";
-    }
+const content: HTMLElement = document.getElementById('content') as HTMLElement;
+
+const button: HTMLElement = document.querySelector('button[id="add"]') as HTMLElement;
+
+button.addEventListener('click', addEmployee);
+
+function addEmployee() {
+    let fullName = document.querySelector('#fullName') as HTMLInputElement;
+
+    let register = document.querySelector('#register') as HTMLInputElement;
+
+    let active = document.querySelector('#active') as HTMLInputElement;
+
+    let admin = document.querySelector('input[name="admin"]:checked') as HTMLInputElement | null;
+
+    let adminValue = admin ? admin.value : 'não';
+
+    content.innerHTML += <string>createLine(fullName.value, +register.value, adminValue, active.checked);
 }
 
-component();
+function createLine(fullName: string, NrRegister: number, admin: string, active: boolean): string {
+    return `<br>${fullName}<br>${NrRegister}<br>${admin}<br>${active}<br>`;
+}
