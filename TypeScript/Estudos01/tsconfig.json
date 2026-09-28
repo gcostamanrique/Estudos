@@ -12,6 +12,7 @@
             "node"
         ],
         "sourceMap": true,
+        "strictNullChecks": true
     },
     "include": [
         "src/**/*",

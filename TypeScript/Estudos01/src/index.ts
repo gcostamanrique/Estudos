@@ -1,10 +1,10 @@
-const content: HTMLElement = document.getElementById('content') as HTMLElement;
+const content = document.getElementById('content') as HTMLElement;
 
-const button: HTMLElement = document.querySelector('button[id="add"]') as HTMLElement;
+const button = document.querySelector('button[id="add"]') as HTMLElement;
 
 button.addEventListener('click', addEmployee);
 
-function addEmployee() {
+function addEmployee(): void {
     let fullName = document.querySelector('#fullName') as HTMLInputElement;
 
     let register = document.querySelector('#register') as HTMLInputElement;
@@ -18,6 +18,6 @@ function addEmployee() {
     content.innerHTML += <string>createLine(fullName.value, +register.value, adminValue, active.checked);
 }
 
-function createLine(fullName: string, NrRegister: number, admin: string, active: boolean): string {
+function createLine(fullName: string, NrRegister: string | number, admin: string, active: boolean): string {
     return `<br>${fullName}<br>${NrRegister}<br>${admin}<br>${active}<br>`;
 }
