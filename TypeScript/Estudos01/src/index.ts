@@ -1,10 +1,11 @@
-const content = document.getElementById('content') as HTMLElement;
 
 const button = document.querySelector('button[id="add"]') as HTMLElement;
 
 button.addEventListener('click', addEmployee);
 
 function addEmployee(): void {
+    const content = document.getElementById('content') as HTMLElement;
+
     let fullName = document.querySelector('#fullName') as HTMLInputElement;
 
     let register = document.querySelector('#register') as HTMLInputElement;
